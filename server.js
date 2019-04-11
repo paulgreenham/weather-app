@@ -18,5 +18,5 @@ app.use('/', api)
 
 const port = 3723
 app.listen(port, function () {
-    console.log(`Server running on port port`)
+    console.log(`Server running on port ${port}`)
 })
