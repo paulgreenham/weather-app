@@ -9,8 +9,7 @@ class TempManager {
     }
 
     async getCityData (cityName) {
-        let cityData = await $.get(`/city/${cityName}`)
-        console.log(cityData)
+        let cityData = await $.get(`./city/${cityName}`)
         this._cityData.push({
             name: cityData.location.name,
             updatedAt: moment(cityData.current.last_updated, "YYYY-MM-DD HH:mm").format(),
@@ -22,7 +21,6 @@ class TempManager {
 
     saveCity (cityName) {
         let city = this._cityData.find(c => c.name == cityName)
-        console.log(city)
         $.post('./city', city, function () {})
     }
 
