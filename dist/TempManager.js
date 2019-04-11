@@ -5,6 +5,7 @@ class TempManager {
 
     async getDataFromDB () {
         let cities = await $.get('./cities')
+        cities.forEach(c => c.saved = true)
         this._cityData.push(...cities)
     }
 
@@ -15,13 +16,15 @@ class TempManager {
             updatedAt: moment(cityData.current.last_updated, "YYYY-MM-DD HH:mm").format(),
             temperature: cityData.current.temp_c,
             condition: cityData.current.condition.text,
-            conditionPic: cityData.current.condition.icon
+            conditionPic: cityData.current.condition.icon,
+            saved: false
         })
     }
 
     saveCity (cityName) {
-        let city = this._cityData.find(c => c.name == cityName)
-        $.post('./city', city, function () {})
+        let index = this._cityData.findIndex(c => c.name == cityName)
+        this._cityData[index].saved = true
+        $.post('./city', this._cityData[index], function () {})
     }
 
     removeCity (cityName) {

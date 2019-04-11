@@ -17,12 +17,16 @@
 
     <script id="city-template" type="text/x-handlebars-template">
         {{#each allCityData}}
-        <div class="city" data-new="" data-cityname="{{this.name}}" data-lastUpdated="{{this.updatedAt}}">
-                <span class="save-button">+</span>
-                <span class="temp">{{this.temperature}}</span>
-                <span class="name">{{this.name}}</span>
-                <img class="conditionPic" src="{{this.conditionPic}}">
-                <span class="condition">{{condition}}</span>
+        <div class="city" data-cityname="{{this.name}}" data-lastUpdated="{{this.updatedAt}}">
+            {{#if this.saved}}    
+            <span class="delete-button">-</span>
+            {{else}}
+            <span class="save-button">+</span>
+            {{/if}}
+            <span class="temp">{{this.temperature}}</span>
+            <span class="name">{{this.name}}</span>
+            <img class="conditionPic" src="{{this.conditionPic}}">
+            <span class="condition">{{condition}}</span>
         </div>
         {{/each}}
     </script>

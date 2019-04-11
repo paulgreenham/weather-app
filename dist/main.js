@@ -15,12 +15,14 @@ $("#search-button").on("click", () => {
     handleSearch($("input").val())
 })
 
-// $("#cities-container").on("click", ".save-button", function () {
-//     manager.saveCity($(this).closest(".city").data("cityname"))
-// })
-
 $("#cities-container").on("click", ".save-button", function () {
+    manager.saveCity($(this).closest(".city").data("cityname"))
+    renderer.renderData(manager.getCities())
+})
+
+$("#cities-container").on("click", ".delete-button", function () {
     manager.removeCity($(this).closest(".city").data("cityname"))
+    renderer.renderData(manager.getCities())
 })
 
 loadPage()
