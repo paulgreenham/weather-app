@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather Watch</title>
+    <!-- <link rel="stylesheet" href="./font-awesome/css/font-awesome.css"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css">
-    <link rel="stylesheet" href="./font-awesome/css/font-awesome.css">
 </head>
 <body>
     <div id="query-container">
         <input type="text" placeholder="City">
-        <button id="search-button">Q</button>
+        <button id="search-button"><i class="fas fa-search"></i></button>
     </div>
     <div id="cities-container"></div>
 
@@ -19,13 +21,13 @@
         {{#each allCityData}}
         <div class="city" data-cityname="{{this.name}}" data-lastupdated="{{this.updatedAt}}">
             {{#if this.saved}}    
-            <span class="delete-button">-</span>
+            <span class="delete-button"><i class="fas fa-minus-circle"></i></span>
             {{else}}
-            <span class="save-button">+</span>
+            <span class="save-button"><i class="fas fa-plus-circle"></i></span>
             {{/if}}
-            <span class="temp">{{this.temperature}}</span>
+            <span class="temp">{{this.temperature}}°</span>
             <span class="name">{{this.name}}</span>
-            <img class="conditionPic" src="{{this.conditionPic}}">
+            <img class="condition-pic" src="{{this.conditionPic}}">
             <span class="condition">{{condition}}</span>
         </div>
         {{/each}}

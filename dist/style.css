@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    padding: 5px;
+    display: grid;
+    grid-template-rows: 1fr 19r;
+    background-color: #0097e6;
+    color: #f5f6fa;
+    font-family: 'Maven Pro', sans-serif;
+    font-size: 18px;
+}
+
+#query-container {
+    display: grid;
+    grid-template-columns: 7fr 1fr 1fr 2fr;
+    grid-template:
+    "i . b .";
+    padding: 5px;
+}
+
+input {
+    grid-area: i;
+    background-color: #0097e6;
+    border: none;
+    border-bottom: solid 1px #f5f6fa;
+    color: #f5f6fa;
+    font-size: 18px;
+}
+
+::placeholder {
+    color: #f5f6fa;
+}
+
+button {
+    grid-area: b;
+    background-color: #0097e6;
+    border: none;
+    color: #f5f6fa;
+    font-size: 18px;
+}
+
+#cities-container {
+    display: grid;
+    padding: 5px;
+}
+
+.city {
+    display: grid;
+    grid-template-columns: 1fr repeat(2, 2fr);
+    grid-template:
+    "b t p"
+    "b n c";
+    justify-items: center;
+    align-items: center;
+    padding: 5px;
+    padding-left: 10px;
+    border: outset 2px #0097e6;
+    margin: 5px;
+}
+
+.delete-button {
+    grid-area: b;
+    color: #c23616;
+    justify-self: left;
+}
+
+.save-button {
+    grid-area: b;
+    color: green;
+    justify-self: left;
+}
+
+.temp {
+    grid-area: t;
+    font-size: 48px;
+}
+
+.name {
+    grid-area: n;
+}
+
+.condition {
+    grid-area: c;
+}
+
+.condition-pic {
+    grid-area: p;
+}
