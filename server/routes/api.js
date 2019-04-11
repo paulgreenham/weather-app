@@ -29,13 +29,13 @@ router.post('/city', function (req, res) {
         conditionPic: data.conditionPic
     })
     newCity.save()
-    res.end()
+    res.end(console.log(`Added ${newCity.name}`))
 })
 
-router.delete('/city/:cityName', function (req, res) {
+router.delete('/city/:cityName', async function (req, res) {
     let city = req.params.cityName
-    City.remove({name: city})
-    res.end()
+    let response = await City.deleteOne({name: city})
+    res.end(console.log(`Deleted ${response.deletedCount} instance(s) of ${city}`))
 })
 
 module.exports = router
