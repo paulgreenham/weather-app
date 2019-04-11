@@ -23,7 +23,7 @@ router.post('/city', function (req, res) {
     let data = req.body
     let newCity = new City ({
         name: data.name,
-        updatedAt: moment(data.updatedAt, "YYYY-MM-DD HH:mm").format("LLL"),
+        updatedAt: moment(data.updatedAt).format(),
         temperature: data.temperature,
         condition: data.condition,
         conditionPic: data.conditionPic
