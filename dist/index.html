@@ -17,7 +17,7 @@
 
     <script id="city-template" type="text/x-handlebars-template">
         {{#each allCityData}}
-        <div class="city" data-cityname="{{this.name}}" data-lastUpdated="{{this.updatedAt}}">
+        <div class="city" data-cityname="{{this.name}}" data-lastupdated="{{this.updatedAt}}">
             {{#if this.saved}}    
             <span class="delete-button">-</span>
             {{else}}
