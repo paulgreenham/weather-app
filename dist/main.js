@@ -22,6 +22,12 @@ $("#search-button").on("click", () => {
     handleSearch($("input").val())
 })
 
+$("input").keypress((event) => {
+    if(event.which == 13) {
+        handleSearch($("input").val())
+    }
+})
+
 $("#cities-container").on("click", ".save-button", function () {
     manager.saveCity($(this).closest(".city").data("cityname"))
     renderer.renderData(manager.getCities())
