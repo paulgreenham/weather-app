@@ -16,7 +16,7 @@
         <button id="search-button"><i class="fas fa-search"></i></button>
     </div>
     <div id="cities-container"></div>
-
+    
     <script id="city-template" type="text/x-handlebars-template">
         {{#each allCityData}}
         <div class="city" data-cityname="{{this.name}}" data-lastupdated="{{this.updatedAt}}">
@@ -29,6 +29,7 @@
             <span class="name">{{this.name}}</span>
             <img class="condition-pic" src="{{this.conditionPic}}">
             <span class="condition">{{condition}}</span>
+            <span class="refresh"><i class="fas fa-sync-alt"></i></span>
         </div>
         {{/each}}
     </script>

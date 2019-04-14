@@ -47,12 +47,13 @@ button {
     display: grid;
     grid-template-columns: 1fr repeat(2, 2fr);
     grid-template:
-    "b t p"
-    "b n c";
+    "b t p r"
+    "b n c r";
     justify-items: center;
     align-items: center;
     padding: 5px;
     padding-left: 10px;
+    padding-right: 10px;
     border: outset 2px #0097e6;
     margin: 5px;
 }
@@ -84,4 +85,10 @@ button {
 
 .condition-pic {
     grid-area: p;
+}
+
+.refresh {
+    grid-area: r;
+    color: #f5f6fa;
+    justify-self: right;
 }
