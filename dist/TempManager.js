@@ -48,7 +48,7 @@ class TempManager {
 
     async updateAllCities (date) {
         this._cityData.forEach(async (c) => {
-            if(date - c.updatedAt >= 3*60*60*1000) {
+            if(date - c.updatedAt >= 3*60*1000) {
                 await this.updateCity(c.name)
             }
         })
