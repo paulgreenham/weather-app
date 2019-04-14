@@ -29,7 +29,9 @@
             <span class="name">{{this.name}}</span>
             <img class="condition-pic" src="{{this.conditionPic}}">
             <span class="condition">{{condition}}</span>
+            {{#if this.saved}}
             <span class="refresh"><i class="fas fa-sync-alt"></i></span>
+            {{/if}}
         </div>
         {{/each}}
     </script>

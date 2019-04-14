@@ -32,9 +32,26 @@ class TempManager {
         this._cityData.splice(removeIndex, 1)
         $.ajax({
             type: "DELETE",
-            url: `/city/${cityName}`,
-            success: function () {}
-        });
+            url: `/city/${cityName}`
+        })
+    }
+
+    async updateCity (cityName) {
+        let changeIndex = this._cityData.findIndex(c => c.name == cityName)
+        let updatedCity = await $.ajax({
+            type: "PUT",
+            url: `/city/${cityName}`
+        })
+        updatedCity.saved = true
+        this._cityData.splice(changeIndex, 1, updatedCity)
+    }
+
+    async updateAllCities (date) {
+        this._cityData.forEach(async (c) => {
+            if(date - c.updatedAt >= 3*60*60*1000) {
+                await this.updateCity(c.name)
+            }
+        })
     }
 
     getCities() {
