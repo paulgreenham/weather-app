@@ -5,7 +5,7 @@ const api = require('./server/routes/api')
 
 
 const mongoose = require('mongoose')
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/weatherDB', {useNewUrlParser: true})
+mongoose.connect(process.env.CONNECTION_STRING || 'mongodb://localhost/weatherDB', {useNewUrlParser: true})
 
 
 const app = express()
