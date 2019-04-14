@@ -1,4 +1,4 @@
-$.ajaxSetup({timeout:60000})
+// $.ajaxSetup({timeout:60000})
 
 const manager = new TempManager
 const renderer = new Renderer
